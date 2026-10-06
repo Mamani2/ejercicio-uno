@@ -25,6 +25,9 @@ jobs:
     - name: Install dependencies
       run: pip install -r src/requeriments.txt|
 
+    - name: Realizar un chequeo linting
+      working-directory: src
+      run: ruff check .
     - name: Test con pytest
       working-directory: src
       run: pytest test.py
